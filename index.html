@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="searchBar">
+        <input type="text" id="cityInput" placeholder="Name of a city">
+        <input type="submit" value="Submit">
+    </div>
+    
+    <div class="displayData">
+        <h1 class="name"></h1>
+        <div class="cardcontainer">
+            <!-- <div class="card">
+                <div class="dateinfo">
+                    <p class="day">Monday</p>
+                    <p class="dayinmonth">24</p>
+                    <p class="month">January</p>
+                </div>
+                <p class="description">Clear Sky</p>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="100px">
+                <p class="temp">15°C</p>
+            </div> -->
+        </div>
+        <div class="chart">
+            <canvas id="myChart">
+
+            </canvas>
+        </div>
+        <div class="pictures">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/js/index.js"></script>
+</body>
+</html>
