@@ -1,11 +1,6 @@
 import Data from "./config.js";
 import {addCard, cardcontainer, displayDiv} from "./utils.js";
 const button = document.querySelector("input[type='submit']")
-const cityInput = document.querySelector("#cityInput")
-
-
-
-
 
 const ctx = document.getElementById("myChart");
 const myChart = new Chart(ctx, {
@@ -68,6 +63,7 @@ button.addEventListener("click", (e) => {
     // variables for graphJS
     let lables = new Array();
     let graphdata = new Array();
+    const cityInput = document.querySelector("#cityInput")
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput.value + "&units=metric&appid=" + Data.key)
         .then(response => response.json())
         .then(data => {

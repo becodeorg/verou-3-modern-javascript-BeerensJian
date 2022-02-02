@@ -59,4 +59,4 @@ const addCard = (weekdata, i, lables, graphdata) => {
 }
 
 
-export {addCard, cardcontainer, displayDiv};
+export {addCard, displayDiv, cardcontainer};
