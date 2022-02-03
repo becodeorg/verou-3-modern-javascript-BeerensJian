@@ -1,14 +1,4 @@
-
-
-const getNameDay = (datee) => {
-    const names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    return names[datee.getDay()]
-}
-
-const getNameMonth = (datee) => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return months[datee.getMonth()]
-}
+import { DateTime } from "luxon";
 
 
 const addCard = (weekdata, i, lables, graphdata, cardcontainer) => {
@@ -24,15 +14,17 @@ const addCard = (weekdata, i, lables, graphdata, cardcontainer) => {
     month.className = "month"
 
     const unixtime = weekdata[i].dt;
+    const dater = DateTime.fromSeconds(unixtime);
+
     const daydate = new Date(unixtime * 1000); // converts the unix time to miliseconds unix time so it can work with Date()
 
     // adding values to variables for GraphJS
-    lables.push(getNameDay(daydate))
+    lables.push(dater.weekdayLong)
     graphdata.push(Math.round(weekdata[i].temp.day))
 
-    cardTitle.innerText = getNameDay(daydate);
-    dayInMonth.innerText = daydate.getDate();
-    month.innerText = getNameMonth(daydate);
+    cardTitle.innerText = dater.weekdayLong;
+    dayInMonth.innerText = dater.day;
+    month.innerText = dater.monthLong;
     dayHeader.append(cardTitle, dayInMonth, month);
     newCard.appendChild(dayHeader);
     

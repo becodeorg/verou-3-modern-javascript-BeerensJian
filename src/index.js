@@ -2,6 +2,12 @@ import Data from "./config.js";
 import {addCard} from "./utils.js";
 const button = document.querySelector("input[type='submit']")
 
+import { DateTime } from "luxon";
+
+
+
+
+
 const ctx = document.getElementById("myChart");
 const myChart = new Chart(ctx, {
     type: 'bar',
