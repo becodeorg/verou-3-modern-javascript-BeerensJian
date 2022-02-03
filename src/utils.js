@@ -1,5 +1,4 @@
-const displayDiv = document.querySelector(".displayData")
-const cardcontainer = displayDiv.children[1]
+
 
 const getNameDay = (datee) => {
     const names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -12,7 +11,7 @@ const getNameMonth = (datee) => {
 }
 
 
-const addCard = (weekdata, i, lables, graphdata) => {
+const addCard = (weekdata, i, lables, graphdata, cardcontainer) => {
     const newCard = document.createElement("div");
     newCard.className = "card";
     const dayHeader = document.createElement("div")
@@ -59,4 +58,4 @@ const addCard = (weekdata, i, lables, graphdata) => {
 }
 
 
-export {addCard, displayDiv, cardcontainer};
+export {addCard};

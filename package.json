@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
+    "devw": "webpack --mode development --watch",
     "build": "webpack --mode production"
+
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,12 @@
   },
   "homepage": "https://github.com/becodeorg/verou-3-modern-javascript-BeerensJian#readme",
   "devDependencies": {
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1"
   }
 }

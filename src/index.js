@@ -1,5 +1,5 @@
 import Data from "./config.js";
-import {addCard, cardcontainer, displayDiv} from "./utils.js";
+import {addCard} from "./utils.js";
 const button = document.querySelector("input[type='submit']")
 
 const ctx = document.getElementById("myChart");
@@ -38,9 +38,10 @@ const fetchDataFromCoord = (lat, lon, lables, graphdata) => {
 
 const processData = (data, lables, graphdata) => {
     const weekdata = data.daily;
-
+    const displayDiv = document.querySelector(".displayData")
+    const cardcontainer = displayDiv.children[1];
     for (let i = 0; i < weekdata.length; i++) {
-        addCard(weekdata, i, lables, graphdata);
+        addCard(weekdata, i, lables, graphdata, cardcontainer);
     }
     
     document.querySelector(".chart").style.display = "block"
@@ -58,6 +59,8 @@ const updateConfigByMutating = (chart, lables, graphdata) => {
 
 button.addEventListener("click", (e) => {
     e.preventDefault()
+    const displayDiv = document.querySelector(".displayData")
+    const cardcontainer = displayDiv.children[1]
     cardcontainer.innerHTML = "";
     displayDiv.children[0].innerHTML = "";
     // variables for graphJS
@@ -87,7 +90,9 @@ button.addEventListener("click", (e) => {
 })
 
 const loadImgs = () => {
+    
     const imgcontainer = document.querySelector(".pictures")
+    
 
     const key = "U-X2th9ZLuaaQOCfH-Ygn1F_WooQcKjcXUjzlWX5FoA"
     const url = "https://api.unsplash.com/search/photos?query=" + cityInput.value + "&client_id=" + key;
@@ -97,7 +102,7 @@ const loadImgs = () => {
     .then (data => {
         console.log(data.results);
         const imgList = data.results;
-
+        imgcontainer.innerHTML = ""
         for (let i = 0; i< imgList.length ; i++) {
 
         
