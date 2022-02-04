@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/becodeorg/verou-3-modern-javascript-BeerensJian#readme",
   "devDependencies": {
+    "eslint": "^8.8.0",
+    "prettier": "2.5.1",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "webpack": "^5.68.0",

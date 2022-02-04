@@ -16,7 +16,6 @@ const addCard = (weekdata, i, lables, graphdata, cardcontainer) => {
     const unixtime = weekdata[i].dt;
     const dater = DateTime.fromSeconds(unixtime);
 
-    const daydate = new Date(unixtime * 1000); // converts the unix time to miliseconds unix time so it can work with Date()
 
     // adding values to variables for GraphJS
     lables.push(dater.weekdayLong)
